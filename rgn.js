@@ -122,7 +122,7 @@ class VG extends POI {
 	}
 
 	show() {
-		if (!this.map.hasLayer(marker))
+		if (!this.map.hasLayer(this.marker))
 			this.marker.addTo(this.map);
 	}
 
@@ -273,15 +273,20 @@ class Map {
 
 	/* Shows all VGs of a given order */
 	showOrder(order) {
-
+		for(let i = 0; i < this.vgs.length; i++) {
+			if (this.vgs[i].order == order)
+				this.vgs[i].show();
+		}
 	}
 
 	/* Hides all VGs of a given order */
 	hideOrder(order) {
-
+		for(let i = 0; i < this.vgs.length; i++) {
+			if (this.vgs[i].order == order)
+				this.vgs[i].hide();
+		}
 	}
 }
-
 
 /* FUNCTIONS for HTML */
 
@@ -294,8 +299,11 @@ function help2() {
 }
 
 function checkboxUpdate(checkbox) {
-	checkbox.checked
-	checkbox.id
+	if(checkbox.checked)
+	 	map.showOrder(checkbox.id[5]);
+	else {
+		map.hideOrder(checkbox.id[5]);
+	}
 }
 
 function onLoad()
