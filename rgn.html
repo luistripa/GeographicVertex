@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<HTML>
+
+<!--
+Rede Geodésica Nacional
+
+0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
+
+
+<HEAD>
+    <TITLE>Linguagens e Ambientes de Programação (2020/2021) [Eng.Inf. - DI/FCT/UNL] - 3º projeto prático (Javascript)</TITLE>
+    <META charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+       crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+       crossorigin=""></script>
+
+    <SCRIPT TYPE="text/javascript" SRC="rgn.js"></SCRIPT>
+    <STYLE>
+        html, body { font-size:12px; font-family: Verdana, sans-serif; height: 100%; width: 100%; padding: 0; margin: 0;}
+        input { padding: 0; margin: 0;}
+
+        hr {
+            color: white;
+            width: 90%;
+        }
+
+        .controlBar { /* The control bar div (blue box) */
+            position: absolute;
+            height: 96vh;
+            width: 24vw;
+            margin: 2vh 3vw 2vh 3vw;
+            z-index: 1;
+
+            background-color: dodgerblue;
+            border-radius: 20px;
+            border-color: white;
+            border-style: ;
+            border-color: dodgerblue;
+            box-shadow: 0 0 10px 5px dodgerblue; /* Shadow arround controlBar */
+
+            overflow-y: scroll;
+            scrollbar-width: none; /* hide scroll bar (Firefox only) */
+        }
+
+        .mainTitle { /* The tile 'Rede Geodésica Nacional' */
+            width: 96%;
+            text-align: center;
+            color: white;
+            font-size: 2.1vw;
+            margin-top: 1vh;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        .controlBar .authors { /* The authors section */
+            width: 100%;
+        }
+
+        .subtitle { /* The subtitle of each section inside the controlBar */
+            margin: 1vh 0 1vh 0;
+            text-align: center;
+            font-size: 2vw;
+            color: white;
+        }
+
+        .authors .name { /* The name of an author */
+            margin-top: 0px;
+            margin-bottom: 0px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.6vw;
+            color: white;
+        }
+
+        .controls .mg_control { /* Checkbox controls for the 'marcos geodésicos' */
+            overflow-y: hidden;
+            scrollbar-width: none;
+        }
+
+        .controls .mg_control .control { /* A checkbox control */
+            display: flex;
+            width: 50%;
+            height: 2vh;
+            float: left;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .map { /* The map */
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </STYLE>
+</HEAD>
+
+<BODY ONLOAD="onLoad()">
+
+    <div class="controlBar">
+        <h2 class="mainTitle">Rede Geodésica Nacional</h2>
+
+        <hr>
+        <div class="authors">
+            <p class="subtitle"><b>Autores:</b></p>
+            <p class="name">12345 Duuude</p>
+            <p class="name">67890 Duuudess</p>
+        </div>
+
+        <hr>
+        <div class="controls">
+            <p class="subtitle"><b>Controlo:</b></p>
+            <div class="mg_control">
+                <div class="control">
+                    <img src="resources/order1.png" alt="order1" />
+                    <input type="checkbox" id="order1" checked onchange="checkboxUpdate(this)"/>
+                </div>
+                <div class="control">
+                    <img src="resources/order2.png" alt="order2" />
+                    <input type="checkbox" id="order2" checked onchange="checkboxUpdate(this)"/>
+                </div>
+                <div class="control">
+                    <img src="resources/order3.png" alt="order3" />
+                    <input type="checkbox" id="order3" checked onchange="checkboxUpdate(this)"/>
+                </div>
+                <div class="control">
+                    <img src="resources/order4.png" alt="order4" />
+                    <input type="checkbox" id="order4" checked onchange="checkboxUpdate(this)"/>
+                </div>
+            </div>
+        </div>
+
+
+        <br />&nbsp;&nbsp;&nbsp;&nbsp;
+        <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
+        <br />
+        <br />&nbsp;&nbsp;&nbsp;&nbsp;Etc.
+
+        <hr>
+        <div class="statistics">
+            <p class="subtitle"><b>Estatísticas:</b></p>
+            &nbsp;&nbsp;VGs visíveis: <SPAN id='visible_caches'>0</SPAN>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;Etc.
+
+        </div>
+        <button title="Teste" height=50 width=100 onclick="help()">Debug</button>
+
+        <hr>
+    </DIV>
+
+    <div id="mapid" class="map"></div>
+
+</BODY>
+
+</HTML>

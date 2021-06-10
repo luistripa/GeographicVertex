@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Rede Geodésica Nacional - região de Setúbal -->
+<rgn>
+  <vg>
+    <name>AEROMAR</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>3.63</altitude>
+    <latitude>38.6947195</latitude>
+    <longitude>-9.0482476</longitude>
+  </vg>
+  <vg>
+    <name>AIANA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>72.60</altitude>
+    <latitude>38.4894166</latitude>
+    <longitude>-9.1549524</longitude>
+  </vg>
+  <vg>
+    <name>AJUDA</name>
+    <order>3</order>
+    <type>PARA-RAIOS S/ CONSTRUÇÃO</type>
+    <altitude>122.93</altitude>
+    <latitude>38.7071399</latitude>
+    <longitude>-9.1976783</longitude>
+  </vg>
+  <vg>
+    <name>ALAGOIÇAS</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>36.72</altitude>
+    <latitude>38.6821642</latitude>
+    <longitude>-8.7927861</longitude>
+  </vg>
+  <vg>
+    <name>ALBUFEIRA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>98.99</altitude>
+    <latitude>38.5421344</latitude>
+    <longitude>-9.1776048</longitude>
+  </vg>
+  <vg>
+    <name>ALFRAGIDE 2</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>184.47</altitude>
+    <latitude>38.7361698</latitude>
+    <longitude>-9.2247798</longitude>
+  </vg>
+  <vg>
+    <name>ALGÉS</name>
+    <order>3</order>
+    <type>PILAR PRISMÁTICO</type>
+    <altitude>83.36</altitude>
+    <latitude>38.7048678</latitude>
+    <longitude>-9.2332075</longitude>
+  </vg>
+  <vg>
+    <name>ALHOS VEDROS</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ DEPÓSITO</type>
+    <altitude>3.59</altitude>
+    <latitude>38.6569932</latitude>
+    <longitude>-9.0290009</longitude>
+  </vg>
+  <vg>
+    <name>ALHOS VEDROS 2</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ DEPÓSITO</type>
+    <altitude>9.25</altitude>
+    <latitude>38.6544541</latitude>
+    <longitude>-9.0230053</longitude>
+  </vg>
+  <vg>
+    <name>ALTO DA CASCALHEIRA</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>54.21</altitude>
+    <latitude>38.5911516</latitude>
+    <longitude>-9.0909106</longitude>
+  </vg>
+  <vg>
+    <name>ALTO DA PAIVA</name>
+    <order>2</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>34.75</altitude>
+    <latitude>38.6534825</latitude>
+    <longitude>-9.0557809</longitude>
+  </vg>
+  <vg>
+    <name>ALTO DA SERAFINA</name>
+    <order>3</order>
+    <type>MARCA DE BRONZE</type>
+    <altitude>200.57</altitude>
+    <latitude>38.7285658</latitude>
+    <longitude>-9.1843918</longitude>
+  </vg>
+  <vg>
+    <name>ALTO DO PINA</name>
+    <order>2</order>
+    <type>BOLEMBREANO S/ CILINDRO</type>
+    <altitude>35.56</altitude>
+    <latitude>38.6438736</latitude>
+    <longitude>-8.7651770</longitude>
+  </vg>
+  <vg>
+    <name>ALTO ESTANQUEIRO</name>
+    <order>2</order>
+    <type>PILAR TRONCO-CÓNICO S/ DEPÓSITO</type>
+    <altitude>43.98</altitude>
+    <latitude>38.6915658</latitude>
+    <longitude>-8.9326629</longitude>
+  </vg>
+  <vg>
+    <name>ALVORÃO</name>
+    <order>3</order>
+    <type>MARCA DE BRONZE</type>
+    <altitude>138.09</altitude>
+    <latitude>38.7272564</latitude>
+    <longitude>-9.1585888</longitude>
+  </vg>
+  <vg>
+    <name>AMORA 1</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>40.65</altitude>
+    <latitude>38.6238383</latitude>
+    <longitude>-9.1222529</longitude>
+  </vg>
+  <vg>
+    <name>AMORA 2</name>
+    <order>3</order>
+    <type>CRUZ DE IGREJA</type>
+    <altitude>32.35</altitude>
+    <latitude>38.6282714</latitude>
+    <longitude>-9.1189784</longitude>
+  </vg>
+  <vg>
+    <name>ARREMULA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>346.54</altitude>
+    <latitude>38.4925073</latitude>
+    <longitude>-8.9559617</longitude>
+  </vg>
+  <vg>
+    <name>ARRENTELA</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>27.10</altitude>
+    <latitude>38.6255627</latitude>
+    <longitude>-9.1033799</longitude>
+  </vg>
+  <vg>
+    <name>AZOIA</name>
+    <order>4</order>
+    <type>BOLEMBREANO S/ CONSTRUÇÃO</type>
+    <altitude>160.71</altitude>
+    <latitude>38.4307542</latitude>
+    <longitude>-9.1910959</longitude>
+  </vg>
+  <vg>
+    <name>BARRACHEIA</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>57.52</altitude>
+    <latitude>38.6113948</latitude>
+    <longitude>-9.0055605</longitude>
+  </vg>
+  <vg>
+    <name>BARREIRO</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ DEPÓSITO</type>
+    <altitude>12.86</altitude>
+    <latitude>38.6623752</latitude>
+    <longitude>-9.0679171</longitude>
+  </vg>
+  <vg>
+    <name>BARROCA</name>
+    <order>4</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>3.71</altitude>
+    <latitude>38.7356276</latitude>
+    <longitude>-8.8998461</longitude>
+  </vg>
+  <vg>
+    <name>BATEL</name>
+    <order>2</order>
+    <type>BOLEMBREANO S/ PIRÂMIDE TRUNCADA</type>
+    <altitude>43.31</altitude>
+    <latitude>38.7409749</latitude>
+    <longitude>-8.9386965</longitude>
+  </vg>
+  <vg>
+    <name>BATEL 1</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>42.30</altitude>
+    <latitude>38.7406928</latitude>
+    <longitude>-8.9401518</longitude>
+  </vg>
+  <vg>
+    <name>BELA VISTA</name>
+    <order>3</order>
+    <type>MARCA DE BRONZE</type>
+    <altitude>61.11</altitude>
+    <latitude>38.5213119</latitude>
+    <longitude>-8.8727820</longitude>
+  </vg>
+  <vg>
+    <name>BELA VISTA 1</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>58.77</altitude>
+    <latitude>38.5206157</latitude>
+    <longitude>-8.8719208</longitude>
+  </vg>
+  <vg>
+    <name>BELÉM</name>
+    <order>3</order>
+    <type>MARCA DE BRONZE</type>
+    <altitude>29.81</altitude>
+    <latitude>38.6917169</latitude>
+    <longitude>-9.2159012</longitude>
+  </vg>
+  <vg>
+    <name>BRAGA</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>28.66</altitude>
+    <latitude>38.6226840</latitude>
+    <longitude>-9.0780809</longitude>
+  </vg>
+  <vg>
+    <name>BRITO</name>
+    <order>3</order>
+    <type>CONSTRUÇÃO</type>
+    <altitude>ND</altitude>
+    <latitude>38.7376683</latitude>
+    <longitude>-9.1064755</longitude>
+  </vg>
+  <vg>
+    <name>CABERNAIS</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>57.40</altitude>
+    <latitude>38.4797548</latitude>
+    <longitude>-9.1831208</longitude>
+  </vg>
+  <vg>
+    <name>CABO DA MALHA</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>110.68</altitude>
+    <latitude>38.5655294</latitude>
+    <longitude>-9.1857470</longitude>
+  </vg>
+  <vg>
+    <name>CAÇADORES 5</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ CONSTRUÇÃO</type>
+    <altitude>139.42</altitude>
+    <latitude>38.7325332</latitude>
+    <longitude>-9.1608494</longitude>
+  </vg>
+  <vg>
+    <name>CALIFÓRNIA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>15.61</altitude>
+    <latitude>38.4861594</latitude>
+    <longitude>-8.8832384</longitude>
+  </vg>
+  <vg>
+    <name>CARRASCOS</name>
+    <order>3</order>
+    <type>NÃO DISPONÍVEL</type>
+    <altitude>ND</altitude>
+    <latitude>38.6111718</latitude>
+    <longitude>-9.1456157</longitude>
+  </vg>
+  <vg>
+    <name>CARRASQUEIRA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>82.14</altitude>
+    <latitude>38.5941118</latitude>
+    <longitude>-8.9598167</longitude>
+  </vg>
+  <vg>
+    <name>CARVOEIROS</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>81.82</altitude>
+    <latitude>38.5467327</latitude>
+    <longitude>-9.0785549</longitude>
+  </vg>
+  <vg>
+    <name>CASAL DO POÇO</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ DEPÓSITO</type>
+    <altitude>ND</altitude>
+    <latitude>38.6233190</latitude>
+    <longitude>-9.2003946</longitude>
+  </vg>
+  <vg>
+    <name>CASCALHEIRA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>60.67</altitude>
+    <latitude>38.6108741</latitude>
+    <longitude>-8.9227092</longitude>
+  </vg>
+  <vg>
+    <name>CAVALEIROS</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>65.93</altitude>
+    <latitude>38.5949048</latitude>
+    <longitude>-8.8819830</longitude>
+  </vg>
+  <vg>
+    <name>CERVO</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>27.05</altitude>
+    <latitude>38.5638639</latitude>
+    <longitude>-8.7981662</longitude>
+  </vg>
+  <vg>
+    <name>CHAPARRO DO HOMEM</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ CILINDRO</type>
+    <altitude>29.64</altitude>
+    <latitude>38.6469021</latitude>
+    <longitude>-8.8562863</longitude>
+  </vg>
+  <vg>
+    <name>CHIBATA</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>113.53</altitude>
+    <latitude>38.6440094</latitude>
+    <longitude>-9.2184328</longitude>
+  </vg>
+  <vg>
+    <name>CLÉRIGO</name>
+    <order>3</order>
+    <type>PILAR CILINDRICO S/ CONSTRUÇÃO</type>
+    <altitude>58.05</altitude>
+    <latitude>38.5479033</latitude>
+    <longitude>-9.0136659</longitude>
+  </vg>
+  <vg>
+    <name>COELHEIRA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>45.18</altitude>
+    <latitude>38.5385174</latitude>
+    <longitude>-9.1455116</longitude>
+  </vg>
+  <vg>
+    <name>COINA</name>
+    <order>3</order>
+    <type>CHAMINÉ</type>
+    <altitude>ND</altitude>
+    <latitude>38.6007084</latitude>
+    <longitude>-9.0439944</longitude>
+  </vg>
+  <vg>
+    <name>CONCEIÇÃO</name>
+    <order>3</order>
+    <type>TORRE</type>
+    <altitude>ND</altitude>
+    <latitude>38.5153906</latitude>
+    <longitude>-9.0458901</longitude>
+  </vg>
+  <vg>
+    <name>CORROIOS</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>42.28</altitude>
+    <latitude>38.6454291</latitude>
+    <longitude>-9.1504348</longitude>
+  </vg>
+  <vg>
+    <name>CRUZ DA PEDRA</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>ND</altitude>
+    <latitude>38.7470611</latitude>
+    <longitude>-9.1766450</longitude>
+  </vg>
+  <vg>
+    <name>CRUZ DE PAU</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ CILINDRO</type>
+    <altitude>37.65</altitude>
+    <latitude>38.6240923</latitude>
+    <longitude>-9.1272120</longitude>
+  </vg>
+  <vg>
+    <name>CUCO</name>
+    <order>4</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>212.03</altitude>
+    <latitude>38.5194288</latitude>
+    <longitude>-8.9866002</longitude>
+  </vg>
+  <vg>
+    <name>DOM PEDRO V</name>
+    <order>3</order>
+    <type>PARA-RAIOS S/ CONSTRUÇÃO</type>
+    <altitude>ND</altitude>
+    <latitude>38.7155097</latitude>
+    <longitude>-9.1460302</longitude>
+  </vg>
+  <vg>
+    <name>ENCOSTA DO MOINHO NOVO</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>25.51</altitude>
+    <latitude>38.4913564</latitude>
+    <longitude>-8.7923140</longitude>
+  </vg>
+  <vg>
+    <name>ESPINHAÇO DO CÃO</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>48.28</altitude>
+    <latitude>38.6535405</latitude>
+    <longitude>-8.9203900</longitude>
+  </vg>
+  <vg>
+    <name>ESTEIRO</name>
+    <order>3</order>
+    <type>FAROL</type>
+    <altitude>ND</altitude>
+    <latitude>38.7037947</latitude>
+    <longitude>-9.2598456</longitude>
+  </vg>
+  <vg>
+    <name>ESTEIRO DO CARVÃO</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>13.23</altitude>
+    <latitude>38.5071631</latitude>
+    <longitude>-8.7820609</longitude>
+  </vg>
+  <vg>
+    <name>ESTEVEIRA</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>39.24</altitude>
+    <latitude>38.7263855</latitude>
+    <longitude>-8.8247246</longitude>
+  </vg>
+  <vg>
+    <name>ESTRELA</name>
+    <order>3</order>
+    <type>CÚPULA DE IGREJA</type>
+    <altitude>ND</altitude>
+    <latitude>38.7130636</latitude>
+    <longitude>-9.1605864</longitude>
+  </vg>
+  <vg>
+    <name>FACHO</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>197.10</altitude>
+    <latitude>38.4466321</latitude>
+    <longitude>-9.1588128</longitude>
+  </vg>
+  <vg>
+    <name>FAÚLHA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>173.83</altitude>
+    <latitude>38.4778054</latitude>
+    <longitude>-9.0911621</longitude>
+  </vg>
+  <vg>
+    <name>FEIJÓ</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>69.58</altitude>
+    <latitude>38.6554840</latitude>
+    <longitude>-9.1665109</longitude>
+  </vg>
+  <vg>
+    <name>FETAL</name>
+    <order>4</order>
+    <type>TRIPLO CILINDRO</type>
+    <altitude>68.63</altitude>
+    <latitude>38.6289676</latitude>
+    <longitude>-9.1845237</longitude>
+  </vg>
+  <vg>
+    <name>FORMOSINHO</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>500.74</altitude>
+    <latitude>38.4807938</latitude>
+    <longitude>-9.0005873</longitude>
+  </vg>
+  <vg>
+    <name>FOZ</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>71.30</altitude>
+    <latitude>38.4475675</latitude>
+    <longitude>-9.1992662</longitude>
+  </vg>
+  <vg>
+    <name>FRADE</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>152.50</altitude>
+    <latitude>38.4706648</latitude>
+    <longitude>-9.1308816</longitude>
+  </vg>
+  <vg>
+    <name>GAFANHOTO</name>
+    <order>4</order>
+    <type>PILAR PRISMÁTICO</type>
+    <altitude>89.60</altitude>
+    <latitude>38.7088844</latitude>
+    <longitude>-9.2202074</longitude>
+  </vg>
+  <vg>
+    <name>INSTITUTO BOTÂNICO</name>
+    <order>3</order>
+    <type>MARCA DE BRONZE</type>
+    <altitude>94.00</altitude>
+    <latitude>38.7192471</latitude>
+    <longitude>-9.1501166</longitude>
+  </vg>
+  <vg>
+    <name>I S T</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ CONSTRUÇÃO</type>
+    <altitude>114.13</altitude>
+    <latitude>38.7366552</latitude>
+    <longitude>-9.1391749</longitude>
+  </vg>
+  <vg>
+    <name>JUDEU</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>23.21</altitude>
+    <latitude>38.5478302</latitude>
+    <longitude>-8.7677577</longitude>
+  </vg>
+  <vg>
+    <name>LAU</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>41.44</altitude>
+    <latitude>38.6017141</latitude>
+    <longitude>-8.8038441</longitude>
+  </vg>
+  <vg>
+    <name>LINDA A PASTORA</name>
+    <order>4</order>
+    <type>PILAR TRONCO-CÓNICO S/ CILINDRO</type>
+    <altitude>106.97</altitude>
+    <latitude>38.7174843</latitude>
+    <longitude>-9.2572238</longitude>
+  </vg>
+  <vg>
+    <name>LISBOA</name>
+    <order>1</order>
+    <type>PILAR PRISMÁTICO S/ CASTELO</type>
+    <altitude>110.43</altitude>
+    <latitude>38.7136963</latitude>
+    <longitude>-9.1331604</longitude>
+  </vg>
+  <vg>
+    <name>LOULÉ</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>52.63</altitude>
+    <latitude>38.5905546</latitude>
+    <longitude>-8.7462814</longitude>
+  </vg>
+  <vg>
+    <name>MALHA DA COSTA</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>23.91</altitude>
+    <latitude>38.4316932</latitude>
+    <longitude>-8.8267231</longitude>
+  </vg>
+  <vg>
+    <name>MALPIQUE</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>20.80</altitude>
+    <latitude>38.6743478</latitude>
+    <longitude>-8.9591369</longitude>
+  </vg>
+  <vg>
+    <name>MAMA SUL</name>
+    <order>3</order>
+    <type>SINAL</type>
+    <altitude>ND</altitude>
+    <latitude>38.7275638</latitude>
+    <longitude>-9.2271979</longitude>
+  </vg>
+  <vg>
+    <name>MARCO FURADO</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>76.08</altitude>
+    <latitude>38.5784962</latitude>
+    <longitude>-9.0259550</longitude>
+  </vg>
+  <vg>
+    <name>MARGIOCHI</name>
+    <order>3</order>
+    <type>PÁRA-RAIOS</type>
+    <altitude>ND</altitude>
+    <latitude>38.7090590</latitude>
+    <longitude>-9.1635907</longitude>
+  </vg>
+  <vg>
+    <name>MARROCOS</name>
+    <order>3</order>
+    <type>PILAR PRISMÁTICO</type>
+    <altitude>102.56</altitude>
+    <latitude>38.7468934</latitude>
+    <longitude>-9.1916844</longitude>
+  </vg>
+  <vg>
+    <name>MARTA</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>19.78</altitude>
+    <latitude>38.6722246</latitude>
+    <longitude>-9.0071333</longitude>
+  </vg>
+  <vg>
+    <name>MARTA 1</name>
+    <order>3</order>
+    <type>PILAR CILINDRICO S/ BASE CILINDRICA S/ DEPÓSITO</type>
+    <altitude>19.83</altitude>
+    <latitude>38.6726418</latitude>
+    <longitude>-9.0072541</longitude>
+  </vg>
+  <vg>
+    <name>MELÃO 1</name>
+    <order>3</order>
+    <type>PILAR CILINDRICO S/ BASE CILINDRICA S/ DEPÓSITO</type>
+    <altitude>ND</altitude>
+    <latitude>38.5467508</latitude>
+    <longitude>-9.0521229</longitude>
+  </vg>
+  <vg>
+    <name>MESQUITA</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>74.74</altitude>
+    <latitude>38.5209309</latitude>
+    <longitude>-9.0840683</longitude>
+  </vg>
+  <vg>
+    <name>MILHAÇO</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>60.18</altitude>
+    <latitude>38.6207572</latitude>
+    <longitude>-9.1705581</longitude>
+  </vg>
+  <vg>
+    <name>MILHANOS</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>61.82</altitude>
+    <latitude>38.7379969</latitude>
+    <longitude>-8.7470534</longitude>
+  </vg>
+  <vg>
+    <name>MONSANTO</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ DEPÓSITO</type>
+    <altitude>227.81</altitude>
+    <latitude>38.7339750</latitude>
+    <longitude>-9.1896559</longitude>
+  </vg>
+  <vg>
+    <name>MONTALVÃO</name>
+    <order>3</order>
+    <type>PILAR PRISMÁTICO</type>
+    <altitude>113.37</altitude>
+    <latitude>38.6772342</latitude>
+    <longitude>-9.1882931</longitude>
+  </vg>
+  <vg>
+    <name>MONTES CLAROS</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>170.26</altitude>
+    <latitude>38.7161837</latitude>
+    <longitude>-9.2027895</longitude>
+  </vg>
+  <vg>
+    <name>MONTIJO 1</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ DEPÓSITO</type>
+    <altitude>15.30</altitude>
+    <latitude>38.7120544</latitude>
+    <longitude>-8.9716813</longitude>
+  </vg>
+  <vg>
+    <name>MONTIJO 2</name>
+    <order>4</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>127.82</altitude>
+    <latitude>38.7256368</latitude>
+    <longitude>-9.2202979</longitude>
+  </vg>
+  <vg>
+    <name>MONTINHO</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>27.24</altitude>
+    <latitude>38.5428626</latitude>
+    <longitude>-8.8165575</longitude>
+  </vg>
+  <vg>
+    <name>MONTINHOSO</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO</type>
+    <altitude>112.45</altitude>
+    <latitude>38.6735539</latitude>
+    <longitude>-9.2152329</longitude>
+  </vg>
+  <vg>
+    <name>MORRAÇA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>3.32</altitude>
+    <latitude>38.7390850</latitude>
+    <longitude>-9.0026467</longitude>
+  </vg>
+  <vg>
+    <name>NICO</name>
+    <order>2</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>162.85</altitude>
+    <latitude>38.5184821</latitude>
+    <longitude>-8.9199890</longitude>
+  </vg>
+  <vg>
+    <name>OLHOS DE ÁGUA</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>69.56</altitude>
+    <latitude>38.5999864</latitude>
+    <longitude>-8.9373054</longitude>
+  </vg>
+  <vg>
+    <name>OUTEIRO</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ CILINDRO</type>
+    <altitude>150.94</altitude>
+    <latitude>38.7441461</latitude>
+    <longitude>-9.2150148</longitude>
+  </vg>
+  <vg>
+    <name>PACHECO</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>89.16</altitude>
+    <latitude>38.6564225</latitude>
+    <longitude>-9.1765095</longitude>
+  </vg>
+  <vg>
+    <name>PAIO PIRES</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>29.08</altitude>
+    <latitude>38.6208932</latitude>
+    <longitude>-9.0823197</longitude>
+  </vg>
+  <vg>
+    <name>PALMELA</name>
+    <order>1</order>
+    <type>PILAR TRONCO-CÓNICO S/ IGREJA</type>
+    <altitude>232.22</altitude>
+    <latitude>38.5661614</latitude>
+    <longitude>-8.9002702</longitude>
+  </vg>
+  <vg>
+    <name>PASSARINHAS</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>53.64</altitude>
+    <latitude>38.7037142</latitude>
+    <longitude>-8.7524279</longitude>
+  </vg>
+  <vg>
+    <name>PAU DE BANDEIRA</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO</type>
+    <altitude>113.35</altitude>
+    <latitude>38.6802259</latitude>
+    <longitude>-9.1685050</longitude>
+  </vg>
+  <vg>
+    <name>PEDRA NEGRA</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>66.40</altitude>
+    <latitude>38.5552591</latitude>
+    <longitude>-9.1536588</longitude>
+  </vg>
+  <vg>
+    <name>PEDRAS NEGRAS</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>60.77</altitude>
+    <latitude>38.5836835</latitude>
+    <longitude>-8.8709677</longitude>
+  </vg>
+  <vg>
+    <name>PEDREIRA</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>237.29</altitude>
+    <latitude>38.4361844</latitude>
+    <longitude>-9.1364148</longitude>
+  </vg>
+  <vg>
+    <name>PENHA DE FRANÇA</name>
+    <order>3</order>
+    <type>PILAR PRISMÁTICO</type>
+    <altitude>129.55</altitude>
+    <latitude>38.7306844</latitude>
+    <longitude>-9.1316261</longitude>
+  </vg>
+  <vg>
+    <name>PÍNCARO</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>380.28</altitude>
+    <latitude>38.4473964</latitude>
+    <longitude>-9.0474006</longitude>
+  </vg>
+  <vg>
+    <name>PORTO DO CONCELHO</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>78.79</altitude>
+    <latitude>38.5414152</latitude>
+    <longitude>-9.0999542</longitude>
+  </vg>
+  <vg>
+    <name>PRAGAL</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>111.69</altitude>
+    <latitude>38.6765697</latitude>
+    <longitude>-9.1703516</longitude>
+  </vg>
+  <vg>
+    <name>QUEIMADA</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>223.73</altitude>
+    <latitude>38.5615713</latitude>
+    <longitude>-8.9229670</longitude>
+  </vg>
+  <vg>
+    <name>RAPOSO</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ MOINHO</type>
+    <altitude>124.73</altitude>
+    <latitude>38.6730769</latitude>
+    <longitude>-9.1895121</longitude>
+  </vg>
+  <vg>
+    <name>REDONDO</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>71.68</altitude>
+    <latitude>38.5630936</latitude>
+    <longitude>-9.0717117</longitude>
+  </vg>
+  <vg>
+    <name>REGO DE ÁGUA</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>40.80</altitude>
+    <latitude>38.6309090</latitude>
+    <longitude>-9.0213262</longitude>
+  </vg>
+  <vg>
+    <name>RESTELO</name>
+    <order>3</order>
+    <type>ANTENA</type>
+    <altitude>89.45</altitude>
+    <latitude>38.7042700</latitude>
+    <longitude>-9.2126669</longitude>
+  </vg>
+  <vg>
+    <name>RIBEIRA</name>
+    <order>3</order>
+    <type>MARCA DE BRONZE</type>
+    <altitude>13.62</altitude>
+    <latitude>38.7052888</latitude>
+    <longitude>-9.1472958</longitude>
+  </vg>
+  <vg>
+    <name>RIO FRIO</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>17.02</altitude>
+    <latitude>38.6733922</latitude>
+    <longitude>-8.8582910</longitude>
+  </vg>
+  <vg>
+    <name>RUIVOS</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>108.52</altitude>
+    <latitude>38.5775839</latitude>
+    <longitude>-8.9601596</longitude>
+  </vg>
+  <vg>
+    <name>SAMOUCO 1</name>
+    <order>3</order>
+    <type>TORRE DE IGREJA</type>
+    <altitude>8.43</altitude>
+    <latitude>38.7207365</latitude>
+    <longitude>-9.0031666</longitude>
+  </vg>
+  <vg>
+    <name>SAMOUCO 2</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ DEPÓSITO</type>
+    <altitude>10.31</altitude>
+    <latitude>38.7184345</latitude>
+    <longitude>-9.0046780</longitude>
+  </vg>
+  <vg>
+    <name>SAMPAIO</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>76.93</altitude>
+    <latitude>38.6451040</latitude>
+    <longitude>-9.1880695</longitude>
+  </vg>
+  <vg>
+    <name>SANTA CATARINA</name>
+    <order>3</order>
+    <type>MOINHO</type>
+    <altitude>101.80</altitude>
+    <latitude>38.7047618</latitude>
+    <longitude>-9.2456653</longitude>
+  </vg>
+  <vg>
+    <name>SÃO FRANCISCO</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>257.46</altitude>
+    <latitude>38.5460228</latitude>
+    <longitude>-8.9690924</longitude>
+  </vg>
+  <vg>
+    <name>SÃO LUÍS</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>391.78</altitude>
+    <latitude>38.5334986</latitude>
+    <longitude>-8.9386636</longitude>
+  </vg>
+  <vg>
+    <name>SÃO PAULO</name>
+    <order>3</order>
+    <type>CRUZ DE IGREJA</type>
+    <altitude>ND</altitude>
+    <latitude>38.6813368</latitude>
+    <longitude>-9.1625958</longitude>
+  </vg>
+  <vg>
+    <name>SÃO SEBASTIÃO</name>
+    <order>3</order>
+    <type>PILAR TRONCO-CÓNICO S/ DEPÓSITO</type>
+    <altitude>37.58</altitude>
+    <latitude>38.6594253</latitude>
+    <longitude>-8.9878501</longitude>
+  </vg>
+  <vg>
+    <name>SÃO VICENTE N</name>
+    <order>3</order>
+    <type>CRUZ DE IGREJA</type>
+    <altitude>ND</altitude>
+    <latitude>38.7149148</latitude>
+    <longitude>-9.1281238</longitude>
+  </vg>
+  <vg>
+    <name>SÃO VICENTE S</name>
+    <order>3</order>
+    <type>TORRE DE IGREJA</type>
+    <altitude>ND</altitude>
+    <latitude>38.7147156</latitude>
+    <longitude>-9.1280966</longitude>
+  </vg>
+  <vg>
+    <name>SAPEC</name>
+    <order>3</order>
+    <type>NÃO DISPONÍVEL</type>
+    <altitude>ND</altitude>
+    <latitude>38.5028615</latitude>
+    <longitude>-8.8390644</longitude>
+  </vg>
+  <vg>
+    <name>SARILHOS</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>10.86</altitude>
+    <latitude>38.6812022</latitude>
+    <longitude>-8.9642231</longitude>
+  </vg>
+  <vg>
+    <name>SEIXAL</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>27.42</altitude>
+    <latitude>38.6428331</latitude>
+    <longitude>-9.1018956</longitude>
+  </vg>
+  <vg>
+    <name>SENHORA DA ATALAIA</name>
+    <order>3</order>
+    <type>PILAR CILINDRICO</type>
+    <altitude>66.86</altitude>
+    <latitude>38.7075996</latitude>
+    <longitude>-8.9218712</longitude>
+  </vg>
+  <vg>
+    <name>SENHORA DA ATALAIA-SW</name>
+    <order>3</order>
+    <type>TORRE</type>
+    <altitude>ND</altitude>
+    <latitude>38.7074943</latitude>
+    <longitude>-8.9221394</longitude>
+  </vg>
+  <vg>
+    <name>SENHORA DO MONTE</name>
+    <order>3</order>
+    <type>TORRE DE IGREJA</type>
+    <altitude>103.67</altitude>
+    <latitude>38.6637672</latitude>
+    <longitude>-9.1979600</longitude>
+  </vg>
+  <vg>
+    <name>SESIMBRA</name>
+    <order>1</order>
+    <type>PILAR CILINDRICO S/ BASE PRISMÁTICA S/ CASTELO</type>
+    <altitude>240.88</altitude>
+    <latitude>38.4527986</latitude>
+    <longitude>-9.1067798</longitude>
+  </vg>
+  <vg>
+    <name>SETÚBAL</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>53.51</altitude>
+    <latitude>38.5292517</latitude>
+    <longitude>-8.8781226</longitude>
+  </vg>
+  <vg>
+    <name>SILHA VELHA</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>28.15</altitude>
+    <latitude>38.5259390</latitude>
+    <longitude>-8.8255730</longitude>
+  </vg>
+  <vg>
+    <name>SOBREDA</name>
+    <order>3</order>
+    <type>PÁRA-RAIOS</type>
+    <altitude>ND</altitude>
+    <latitude>38.6460401</latitude>
+    <longitude>-9.1977071</longitude>
+  </vg>
+  <vg>
+    <name>SOLTROIA</name>
+    <order>3</order>
+    <type>PILAR CILINDRICO S/ BASE CILINDRICA S/ DEPÓSITO</type>
+    <altitude>23.65</altitude>
+    <latitude>38.4581993</latitude>
+    <longitude>-8.8583355</longitude>
+  </vg>
+  <vg>
+    <name>TAPADA</name>
+    <order>2</order>
+    <type>PILAR TRONCO-CÓNICO</type>
+    <altitude>134.27</altitude>
+    <latitude>38.7137191</latitude>
+    <longitude>-9.1865848</longitude>
+  </vg>
+  <vg>
+    <name>TATÁ</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>40.36</altitude>
+    <latitude>38.7093573</latitude>
+    <longitude>-8.8033191</longitude>
+  </vg>
+  <vg>
+    <name>TELHA</name>
+    <order>4</order>
+    <type>PILAR CILINDRICO S/ BASE CILINDRICA S/ DEPÓSITO</type>
+    <altitude>43.68</altitude>
+    <latitude>38.6394390</latitude>
+    <longitude>-9.0551599</longitude>
+  </vg>
+  <vg>
+    <name>TERCENA</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>138.94</altitude>
+    <latitude>38.7473614</latitude>
+    <longitude>-9.2739331</longitude>
+  </vg>
+  <vg>
+    <name>TERRIM</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>38.48</altitude>
+    <latitude>38.6313744</latitude>
+    <longitude>-8.9379399</longitude>
+  </vg>
+  <vg>
+    <name>TUBERAL</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>68.35</altitude>
+    <latitude>38.5166455</latitude>
+    <longitude>-9.1218443</longitude>
+  </vg>
+  <vg>
+    <name>VALE DA AMOREIRA</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>40.79</altitude>
+    <latitude>38.6381742</latitude>
+    <longitude>-9.0386324</longitude>
+  </vg>
+  <vg>
+    <name>VALE DA VILA</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ CONSTRUÇÃO</type>
+    <altitude>38.19</altitude>
+    <latitude>38.6261023</latitude>
+    <longitude>-8.8749624</longitude>
+  </vg>
+  <vg>
+    <name>VALE GRANDE</name>
+    <order>4</order>
+    <type>BOLEMBREANO</type>
+    <altitude>42.65</altitude>
+    <latitude>38.4987209</latitude>
+    <longitude>-9.1758879</longitude>
+  </vg>
+  <vg>
+    <name>VESUGO</name>
+    <order>2</order>
+    <type>BOLEMBREANO</type>
+    <altitude>195.43</altitude>
+    <latitude>38.5037769</latitude>
+    <longitude>-9.0209146</longitude>
+  </vg>
+  <vg>
+    <name>VIDIGAL</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ CONSTRUÇÃO</type>
+    <altitude>33.50</altitude>
+    <latitude>38.6069263</latitude>
+    <longitude>-9.1038914</longitude>
+  </vg>
+  <vg>
+    <name>VIEIRA</name>
+    <order>3</order>
+    <type>PILAR PRISMÁTICO</type>
+    <altitude>62.14</altitude>
+    <latitude>38.7294358</latitude>
+    <longitude>-9.1130019</longitude>
+  </vg>
+  <vg>
+    <name>VILA CHÃ</name>
+    <order>3</order>
+    <type>BOLEMBREANO S/ DEPÓSITO</type>
+    <altitude>46.18</altitude>
+    <latitude>38.6333378</latitude>
+    <longitude>-9.0378571</longitude>
+  </vg>
+  <vg>
+    <name>VINHAS</name>
+    <order>3</order>
+    <type>BOLEMBREANO</type>
+    <altitude>140.87</altitude>
+    <latitude>38.4883936</latitude>
+    <longitude>-9.0566750</longitude>
+  </vg>
+</rgn>
