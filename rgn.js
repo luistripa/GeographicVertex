@@ -108,35 +108,50 @@ class POI {
 }
 
 class VG extends POI {
-	constructor(xml) {
+	constructor(xml, map, icons) {
 		super(xml);
 		this.order = getFirstValueByTagName(xml, "order");
 		this.altitude = getFirstValueByTagName(xml, "altitude");
 		this.type = getFirstValueByTagName(xml, "type");
+
+		this.map = map;
+		this.marker = L.marker([this.latitude, this.longitude], {icon: icons['order'+this.order]});
+		this.marker.bindPopup("I'm the marker of VG <b>" + this.name + "</b>.")
+				.bindTooltip(this.name)
+		this.show();
+	}
+
+	show() {
+		if (!this.map.hasLayer(marker))
+			this.marker.addTo(this.map);
+	}
+
+	hide() {
+		this.map.removeLayer(this.marker);
 	}
 }
 
 class VG1 extends VG {
-	constructor(xml) {
-		super(xml);
+	constructor(xml, map, icons) {
+		super(xml, map, icons);
 	}
 }
 
 class VG2 extends VG {
-	constructor(xml) {
-		super(xml);
+	constructor(xml, map, icons) {
+		super(xml, map, icons);
 	}
 }
 
 class VG3 extends VG {
-	constructor(xml) {
-		super(xml);
+	constructor(xml, map, icons) {
+		super(xml, map, icons);
 	}
 }
 
 class VG4 extends VG {
-	constructor(xml) {
-		super(xml);
+	constructor(xml, map, icons) {
+		super(xml, map, icons);
 	}
 }
 
@@ -147,9 +162,8 @@ class Map {
 	constructor(center, zoom) {
 		this.lmap = L.map(MAP_ID, {zoomControl: false}).setView(center, zoom);
 		this.addBaseLayers(MAP_LAYERS);
-		let icons = this.loadIcons(RESOURCES_DIR);
-		let vgs = this.loadRGN(RESOURCES_DIR + RGN_FILE_NAME);
-		this.populate(icons, vgs);
+		this.icons = this.loadIcons(RESOURCES_DIR);
+		this.vgs = this.loadRGN(RESOURCES_DIR + RGN_FILE_NAME);
 		this.addClickHandler(e =>
 			L.popup()
 			.setLatLng(e.latlng)
@@ -219,34 +233,22 @@ class Map {
 
 				switch (order) {
 					case '1':
-						vg = new VG1(xs[i]);
+						vg = new VG1(xs[i], this.lmap, this.icons);
 						break;
 					case '2':
-				  	vg = new VG2(xs[i]);
+				  	vg = new VG2(xs[i], this.lmap, this.icons);
 						break;
 					case '3':
-				  	vg = new VG3(xs[i]);
+				  	vg = new VG3(xs[i], this.lmap, this.icons);
 						break;
 					case '4':
-				  	vg = new VG4(xs[i]);
+				  	vg = new VG4(xs[i], this.lmap, this.icons);
 						break;
 				}
 				vgs[i] = vg;
 			}
 		}
 		return vgs;
-	}
-
-	populate(icons, vgs)  {
-		for(let i = 0 ; i < vgs.length ; i++)
-			this.addMarker(icons, vgs[i]);
-	}
-
-	addMarker(icons, vg) {
-		let marker = L.marker([vg.latitude, vg.longitude], {icon: icons['order'+vg.order]});
-		marker.bindPopup("I'm the marker of VG <b>" + vg.name + "</b>.")
-				.bindTooltip(vg.name)
-					.addTo(this.lmap);
 	}
 
 	addClickHandler(handler) {
@@ -268,10 +270,33 @@ class Map {
 			circle.bindPopup(popup);
 		return circle;
 	}
+
+	/* Shows all VGs of a given order */
+	showOrder(order) {
+
+	}
+
+	/* Hides all VGs of a given order */
+	hideOrder(order) {
+
+	}
 }
 
 
 /* FUNCTIONS for HTML */
+
+function help() {
+	map.vgs[0].hide();
+}
+
+function help2() {
+	map.vgs[0].show();
+}
+
+function checkboxUpdate(checkbox) {
+	checkbox.checked
+	checkbox.id
+}
 
 function onLoad()
 {

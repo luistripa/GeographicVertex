@@ -20,15 +20,29 @@ Rede Geodésica Nacional
 
     <SCRIPT TYPE="text/javascript" SRC="rgn.js"></SCRIPT>
     <STYLE>
-        html, body { font-size:12px; font-family: Verdana, sans-serif; height: 100%; width: 100%; padding: 0; margin: 0;}
-        input { padding: 0; margin: 0;}
-
-        hr {
-            color: white;
-            width: 90%;
+        html, body {
+            font-size:12px;
+            font-family:
+            Verdana,
+            sans-serif;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        input {
+            padding: 0;
+            margin: 0;
         }
 
-        .controlBar { /* The control bar div (blue box) */
+        hr {
+            float: left;
+            color: white;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .controlBar { /* The control bar div (box on the left)) */
             position: absolute;
             height: 96vh;
             width: 24vw;
@@ -67,7 +81,12 @@ Rede Geodésica Nacional
             color: white;
         }
 
-        .authors .name { /* The name of an author */
+        .section {
+            width: 100%;
+            float: left;
+        }
+
+        .section .name { /* The name of an author */
             margin-top: 0px;
             margin-bottom: 0px;
             width: 100%;
@@ -76,18 +95,35 @@ Rede Geodésica Nacional
             color: white;
         }
 
-        .controls .mg_control { /* Checkbox controls for the 'marcos geodésicos' */
+        .section .mg_control { /* Checkbox controls for the 'marcos geodésicos' */
             overflow-y: hidden;
             scrollbar-width: none;
         }
 
-        .controls .mg_control .control { /* A checkbox control */
+        .section .mg_control .control { /* A checkbox control */
             display: flex;
             width: 50%;
             height: 2vh;
             float: left;
             justify-content: center;
             align-items: center;
+        }
+
+        .section .controlButtons { /* Button section from the 'Controlos' section */
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .controlButtons input { /* Buttons from the 'Controlos' section */
+            width: 46%;
+            height: 40px;
+            margin: 2% 2%;
+            float: left;
+        }
+
+        .section .statistic { /* A statistic show in the 'Estatísticas' section */
+            text-align: center;
+            font-size: 1.4vw;
         }
 
         .map { /* The map */
@@ -107,14 +143,14 @@ Rede Geodésica Nacional
         <h2 class="mainTitle">Rede Geodésica Nacional</h2>
 
         <hr>
-        <div class="authors">
+        <div class="section">
             <p class="subtitle"><b>Autores:</b></p>
             <p class="name">12345 Duuude</p>
             <p class="name">67890 Duuudess</p>
         </div>
 
         <hr>
-        <div class="controls">
+        <div class="section">
             <p class="subtitle"><b>Controlo:</b></p>
             <div class="mg_control">
                 <div class="control">
@@ -134,27 +170,28 @@ Rede Geodésica Nacional
                     <input type="checkbox" id="order4" checked onchange="checkboxUpdate(this)"/>
                 </div>
             </div>
+            <div class="controlButtons">
+                <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
+                <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
+                <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
+                <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
+            </div>
         </div>
-
-
-        <br />&nbsp;&nbsp;&nbsp;&nbsp;
-        <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
-        <br />
-        <br />&nbsp;&nbsp;&nbsp;&nbsp;Etc.
 
         <hr>
-        <div class="statistics">
-            <p class="subtitle"><b>Estatísticas:</b></p>
-            &nbsp;&nbsp;VGs visíveis: <SPAN id='visible_caches'>0</SPAN>
-            <br />&nbsp;&nbsp;&nbsp;&nbsp;Etc.
 
+        <div class="section">
+            <p class="subtitle"><b>Estatísticas:</b></p>
+            <p class="statistic">VGs visíveis: <SPAN id='visible_caches'>0</SPAN></p>
         </div>
-        <button title="Teste" height=50 width=100 onclick="help()">Debug</button>
+        <button title="Teste" onclick="help()">Debug1</button>
+        <button title="Teste" onclick="help2()">Debug2</button>
 
         <hr>
     </DIV>
 
     <div id="mapid" class="map"></div>
+
 
 </BODY>
 
