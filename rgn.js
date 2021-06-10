@@ -44,6 +44,8 @@ const VG_ORDERS =
 const RGN_FILE_NAME =
 	"rgn.xml";
 
+const VG_TYPE_COUNT = 4;
+
 
 /* GLOBAL VARIABLES */
 
@@ -116,9 +118,13 @@ class VG extends POI {
 
 		this.map = map;
 		this.marker = L.marker([this.latitude, this.longitude], {icon: icons['order'+this.order]});
-		this.marker.bindPopup("I'm the marker of VG <b>" + this.name + "</b>.")
+		this.marker.bindPopup("I'm the marker of VG <b>" + this.name + "</b>.<br>"+
+							"Lat: "+this.latitude+"<br>"+
+							"Lng: "+this.longitude+"<br>"+
+							"Order: "+this.order+"<br>"+
+							"Altitude: "+this.altitude+"<br>"+
+							"Type: "+this.type)
 				.bindTooltip(this.name)
-		this.show();
 	}
 
 	show() {
@@ -155,6 +161,53 @@ class VG4 extends VG {
 	}
 }
 
+class VGCollection {
+	constructor() {
+		this.vgs = []; // Lista de listas de VGs
+		this.vgs_count = [];
+		this.shown_vgs = 0
+	}
+
+	addVG(vg) {
+		if (this.vgs[vg.order] == undefined)
+			this.vgs[vg.order] = [];
+		this.vgs[vg.order].push(vg)
+	}
+
+	showOrder(order) {
+		for(let i = 0; i < this.vgs[order].length; i++) {
+			this.vgs[order][i].show();
+			this.shown_vgs++;
+			if (this.vgs_count[order] == undefined)
+				this.vgs_count[order] = 0;
+			this.vgs_count[order]++;
+		}
+		this.updateStatistics();
+	}
+
+	hideOrder(order) {
+		for(let i = 0; i < this.vgs[order].length; i++) {
+			this.vgs[order][i].hide();
+			this.shown_vgs--;
+			if (this.vgs_count[order] == undefined)
+				this.vgs_count[order] = 0;
+			this.vgs_count[order]--;
+		}
+		this.updateStatistics();
+	}
+
+	updateStatistics() {
+		document.getElementById("visible_caches").innerText = this.shown_vgs;
+
+		for (let i=1; i<this.vgs_count.length; i++) {
+			if (this.vgs_count[i] == undefined)
+				document.getElementById("visible_caches_order"+i).innerText = 0;
+			else
+				document.getElementById("visible_caches_order"+i).innerText = this.vgs_count[i];
+		}
+	}
+}
+
 
 /* MAP */
 
@@ -169,6 +222,8 @@ class Map {
 			.setLatLng(e.latlng)
 			.setContent("You clicked the map at " + e.latlng.toString())
 		);
+
+		this.shown_vgs = 0;
 	}
 
 	makeMapLayer(name, spec) {
@@ -223,7 +278,7 @@ class Map {
 	loadRGN(filename) {
 		let xmlDoc = loadXMLDoc(filename);
 		let xs = getAllValuesByTagName(xmlDoc, "vg");
-		let vgs = [];
+		let vgs = new VGCollection();
 		if(xs.length == 0)
 			alert("Empty file");
 		else {
@@ -236,16 +291,17 @@ class Map {
 						vg = new VG1(xs[i], this.lmap, this.icons);
 						break;
 					case '2':
-				  	vg = new VG2(xs[i], this.lmap, this.icons);
+				  		vg = new VG2(xs[i], this.lmap, this.icons);
 						break;
 					case '3':
-				  	vg = new VG3(xs[i], this.lmap, this.icons);
+				  		vg = new VG3(xs[i], this.lmap, this.icons);
 						break;
 					case '4':
-				  	vg = new VG4(xs[i], this.lmap, this.icons);
+				  		vg = new VG4(xs[i], this.lmap, this.icons);
 						break;
+
 				}
-				vgs[i] = vg;
+				vgs.addVG(vg);
 			}
 		}
 		return vgs;
@@ -270,39 +326,23 @@ class Map {
 			circle.bindPopup(popup);
 		return circle;
 	}
-
-	/* Shows all VGs of a given order */
-	showOrder(order) {
-		for(let i = 0; i < this.vgs.length; i++) {
-			if (this.vgs[i].order == order)
-				this.vgs[i].show();
-		}
-	}
-
-	/* Hides all VGs of a given order */
-	hideOrder(order) {
-		for(let i = 0; i < this.vgs.length; i++) {
-			if (this.vgs[i].order == order)
-				this.vgs[i].hide();
-		}
-	}
 }
 
 /* FUNCTIONS for HTML */
 
 function help() {
-	map.vgs[0].hide();
+
 }
 
 function help2() {
-	map.vgs[0].show();
+
 }
 
 function checkboxUpdate(checkbox) {
 	if(checkbox.checked)
-	 	map.showOrder(checkbox.id[5]);
+	 	map.vgs.showOrder(checkbox.id[5]);
 	else {
-		map.hideOrder(checkbox.id[5]);
+		map.vgs.hideOrder(checkbox.id[5]);
 	}
 }
 
@@ -310,4 +350,10 @@ function onLoad()
 {
 	map = new Map(MAP_CENTRE, 12);
 	map.addCircle(MAP_CENTRE, 100, "FCT/UNL");
+
+	// Update checkbox objects
+	for (let i=1; i<VG_TYPE_COUNT; i++)
+		if (document.getElementById("order"+i).checked)
+			map.vgs.showOrder(i);
+
 }
