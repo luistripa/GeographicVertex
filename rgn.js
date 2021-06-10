@@ -122,7 +122,23 @@ class VG1 extends VG {
 	}
 }
 
-/* TODO: Criar VG2, VG3, VG4 */
+class VG2 extends VG {
+	constructor(xml) {
+		super(xml);
+	}
+}
+
+class VG3 extends VG {
+	constructor(xml) {
+		super(xml);
+	}
+}
+
+class VG4 extends VG {
+	constructor(xml) {
+		super(xml);
+	}
+}
 
 
 /* MAP */
@@ -206,10 +222,13 @@ class Map {
 						vg = new VG1(xs[i]);
 						break;
 					case '2':
+				  	vg = new VG2(xs[i]);
 						break;
 					case '3':
+				  	vg = new VG3(xs[i]);
 						break;
 					case '4':
+				  	vg = new VG4(xs[i]);
 						break;
 				}
 				vgs[i] = vg;
