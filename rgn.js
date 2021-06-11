@@ -146,7 +146,9 @@ class VG extends POI {
 							"Lng: "+this.longitude+"<br>"+
 							"Order: "+this.order+"<br>"+
 							"Altitude: "+this.altitude+"<br>"+
-							"Type: "+this.type)
+							"Type: "+this.type+"<br>"+
+							"<input type='button' value='VGs Same Type' onclick='vgSameOrder("+ this.order +");'><br>"+
+							"<input type='button', value='Show On Street View' onclick='openGoogleStreetView("+this.latitude+", "+this.longitude+")'>")
 				.bindTooltip(this.name)
 	}
 }
@@ -154,24 +156,52 @@ class VG extends POI {
 class VG1 extends VG {
 	constructor(xml, map) {
 		super(xml, map);
+
+		this.MIN_DISTANCE = 30;
+		this.MAX_DISTANCE = 60;
+	}
+
+	verify(vg) {
+		let distance = haversine(this.latitude, this.longitude, vg.latitude, vg.longitude);
+		return distance <= this.MAX_DISTANCE && distance >= this.MIN_DISTANCE;
 	}
 }
 
 class VG2 extends VG {
 	constructor(xml, map) {
 		super(xml, map);
+
+		this.MIN_DISTANCE = 20;
+		this.MAX_DISTANCE = 30;
+	}
+
+	verify(vg) {
+		let distance = haversine(this.latitude, this.longitude, vg.latitude, vg.longitude);
+		return distance <= this.MAX_DISTANCE && distance >= this.MIN_DISTANCE;
 	}
 }
 
 class VG3 extends VG {
 	constructor(xml, map) {
 		super(xml, map);
+
+		this.MIN_DISTANCE = 5;
+		this.MAX_DISTANCE = 30;
+	}
+
+	verify(vg) {
+		let distance = haversine(this.latitude, this.longitude, vg.latitude, vg.longitude);
+		return distance <= this.MAX_DISTANCE && distance >= this.MIN_DISTANCE;
 	}
 }
 
 class VG4 extends VG {
 	constructor(xml, map) {
 		super(xml, map);
+	}
+
+	verify(vg) {
+		return true;
 	}
 }
 
@@ -232,7 +262,7 @@ class VGCollection {
 				else {
 					if (this.vgs[i][j].altitude != "ND" &&
 						this.vgs[i][j].shown &&
-						parseInt(this.vgs[i][j].altitude) > parseInt(auxVG.altitude)
+						parseFloat(this.vgs[i][j].altitude) > parseFloat(auxVG.altitude)
 					)
 						auxVG = this.vgs[i][j];
 				}
@@ -252,7 +282,7 @@ class VGCollection {
 				else {
 					if (this.vgs[i][j].altitude != "ND" &&
 						this.vgs[i][j].shown &&
-						parseInt(this.vgs[i][j].altitude) < parseInt(auxVG.altitude)
+						parseFloat(this.vgs[i][j].altitude) < parseFloat(auxVG.altitude)
 					)
 						auxVG = this.vgs[i][j];
 				}
@@ -262,9 +292,7 @@ class VGCollection {
 	}
 
 	showAltitudes() {
-		for (let i=0; i<this.vgs.length; i++) {
-			if (this.vgs[i] == undefined)
-				continue;
+		for (let i=1; i<=this.vgs.length; i++) {
 			for (let j=0; j<this.vgs[i].length; j++) {
 				if (this.vgs[i][j].shown && this.vgs[i][j].altitude != "ND") {
 					let circle = this.map.addCircle([this.vgs[i][j].latitude, this.vgs[i][j].longitude], parseInt(this.vgs[i][j].altitude));
@@ -275,10 +303,48 @@ class VGCollection {
 		}
 	}
 
-	removeAltitudeCircles() {
+	removeCircles() {
 		for(let i = 0; i < this.circleArray.length; i++) {
 			this.map.lmap.removeLayer(this.circleArray[i]);
 		}
+	}
+
+	showVGSSameOrder(order) {
+		for (let i=0; i<this.vgs[order].length; i++) {
+			let circle = this.map.addCircle([this.vgs[order][i].latitude, this.vgs[order][i].longitude], 200);
+			circle.addTo(this.map.lmap);
+			this.circleArray.push(circle);
+		}
+	}
+
+	verifyVGS() {
+		let invalid = []
+		let isInvalid = false;
+		for (let i=1; i<=this.vgs.length; i++) {
+			if (this.vgs[i] == undefined)
+				continue;
+			for (let j=0; j<this.vgs[i].length; j++) {
+				let vgj = this.vgs[i][j];
+
+				for (let k=j+1; k<this.vgs[i].length; k++) {
+					let vgk = this.vgs[i][k];
+					if (!vgj.verify(vgk)) {
+						invalid.push(vgk.name);
+						isInvalid = true;
+						let circle = this.map.addCircle([this.vgs[i][k].latitude, this.vgs[i][k].longitude], 200);
+						circle.addTo(this.map.lmap);
+						this.circleArray.push(circle);
+					}
+				}
+				if (isInvalid)
+					invalid.push(vgj.name);
+			}
+		}
+		alert(invalid);
+
+		//|1|2|3|2|5|7|1|5|2|
+
+
 	}
 
 	/* Faz update das estatísticas da página */
@@ -331,7 +397,7 @@ class Map {
 			.setContent("You clicked the map at " + e.latlng.toString())
 		);
 		this.addClickHandlerNoReturn(e =>
-			this.vgs.removeAltitudeCircles()
+			this.vgs.removeCircles()
 		);
 		this.shown_vgs = 0;
 	}
@@ -419,7 +485,7 @@ class Map {
 	}
 
 	addClickHandler(handler) {
-		let m = this.lmap;
+		let m = this.lmap; // Esta linha tem de estar aqui, o m em handler2 não consegue reconhecer o this.lmap
 		function handler2(e) {
 			return handler(e).openOn(m);
 		}
@@ -427,7 +493,6 @@ class Map {
 	}
 
 	addClickHandlerNoReturn(handler) {
-		let m = this.lmap;
 		function handler2(e) {
 			return handler(e);
 		}
@@ -458,6 +523,8 @@ function help2() {
 }
 
 function checkboxUpdate(checkbox) {
+	map.vgs.removeCircles();
+
 	if(checkbox.checked)
 	 	map.vgs.showOrder(checkbox.id[5]);
 	else {
@@ -469,6 +536,20 @@ function showAltitudeButton() {
 	map.vgs.showAltitudes();
 }
 
+/* Shows all the VGs of the same order*/
+function vgSameOrder(order) {
+	map.vgs.showVGSSameOrder(order);
+}
+
+function verifyVGSButton() {
+	map.vgs.verifyVGS();
+}
+
+function openGoogleStreetView(lat, lng) {
+	alert(lat+lng)
+	document.location = "http://maps.google.com/maps?q=&layer=c&cbll="+lat+","+lng;
+}
+
 function onLoad()
 {
 	map = new Map(MAP_CENTRE, 12);
@@ -478,7 +559,6 @@ function onLoad()
 	for (let i=1; i<=VG_TYPE_COUNT; i++)
 		if (document.getElementById("order"+i).checked)
 			map.vgs.showOrder(i);
-
 }
 
 function showControlBar() {
