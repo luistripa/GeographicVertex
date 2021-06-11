@@ -165,6 +165,20 @@ class VG1 extends VG {
 		let distance = haversine(this.latitude, this.longitude, vg.latitude, vg.longitude);
 		return distance <= this.MAX_DISTANCE && distance >= this.MIN_DISTANCE;
 	}
+
+	refreshPopup() {
+		this.marker.bindPopup("I'm the marker of VG <b>" + this.name + "</b>.<br>"+
+							"Lat: "+this.latitude+"<br>"+
+							"Lng: "+this.longitude+"<br>"+
+							"Order: "+this.order+"<br>"+
+							"Altitude: "+this.altitude+"<br>"+
+							"Type: "+this.type+"<br>"+
+							"<input type='button' value='VGs Same Type' onclick='vgSameOrder("+ this.order +");'><br>"+
+							"<input type='button', value='Show On Street View' onclick='openGoogleStreetView("+this.latitude+", "+this.longitude+")'>" +
+							"Total VGs under or equal to 60 km away: "+ this.map.vgs.VGsUnderEqualDist(this, 60000))
+				.bindTooltip(this.name);
+	}
+
 }
 
 class VG2 extends VG {
@@ -213,6 +227,16 @@ class VGCollection {
 		this.shown_vgs = 0;
 		this.lower_vg = null;
 		this.circleArray = [];
+	}
+
+	refreshPopups() {
+		for (let i=0; i<this.vgs.length; i++) {
+			if (this.vgs[i] == undefined)
+				continue;
+			for (let j=0; j<this.vgs[i].length; j++) {
+				if(this.vgs[i][j] instanceof VG1)
+					this.vgs[i][j].refreshPopup();
+			}
 	}
 
 	addVG(vg) {
@@ -340,6 +364,18 @@ class VGCollection {
 		}
 		alert("Invalidos: "+invalid);
 
+	}
+
+	VGsUnderEqualDist(vg, dist){
+		let vgsaux = [];
+		for (let i=0; i<this.vgs[vg.order].length; i++) {
+			let vgi = this.vgs[vg.order][i];
+			if (vg !== vgi) {
+				if(haversine(vg.latitude, vg.longitude, vgi.latitude, vgi.longitude) <= dist)
+					vgsaux.push(vgi.name);
+			}
+		}
+		return vgsaux;
 	}
 
 	/* Faz update das estatísticas da página */
