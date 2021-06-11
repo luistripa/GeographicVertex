@@ -176,11 +176,13 @@ class VG4 extends VG {
 }
 
 class VGCollection {
-	constructor() {
+	constructor(map) {
+		this.map = map;
 		this.vgs = []; // Lista de listas de VGs
 		this.vgs_count = [];
 		this.shown_vgs = 0;
 		this.lower_vg = null;
+		this.circleArray = [];
 	}
 
 	addVG(vg) {
@@ -259,6 +261,26 @@ class VGCollection {
 		return auxVG;
 	}
 
+	showAltitudes() {
+		for (let i=0; i<this.vgs.length; i++) {
+			if (this.vgs[i] == undefined)
+				continue;
+			for (let j=0; j<this.vgs[i].length; j++) {
+				if (this.vgs[i][j].shown && this.vgs[i][j].altitude != "ND") {
+					let circle = this.map.addCircle([this.vgs[i][j].latitude, this.vgs[i][j].longitude], parseInt(this.vgs[i][j].altitude));
+					circle.addTo(this.map.lmap);
+					this.circleArray.push(circle);
+				}
+			}
+		}
+	}
+
+	removeAltitudeCircles() {
+		for(let i = 0; i < this.circleArray.length; i++) {
+			this.map.lmap.removeLayer(this.circleArray[i]);
+		}
+	}
+
 	/* Faz update das estatísticas da página */
 	updateStatistics() {
 		document.getElementById("visible_caches").innerText = this.shown_vgs;
@@ -308,7 +330,9 @@ class Map {
 			.setLatLng(e.latlng)
 			.setContent("You clicked the map at " + e.latlng.toString())
 		);
-
+		this.addClickHandlerNoReturn(e =>
+			this.vgs.removeAltitudeCircles()
+		);
 		this.shown_vgs = 0;
 	}
 
@@ -364,7 +388,7 @@ class Map {
 	loadRGN(filename) {
 		let xmlDoc = loadXMLDoc(filename);
 		let xs = getAllValuesByTagName(xmlDoc, "vg");
-		let vgs = new VGCollection();
+		let vgs = new VGCollection(this);
 		if(xs.length == 0)
 			alert("Empty file");
 		else {
@@ -402,6 +426,14 @@ class Map {
 		return this.lmap.on('click', handler2);
 	}
 
+	addClickHandlerNoReturn(handler) {
+		let m = this.lmap;
+		function handler2(e) {
+			return handler(e);
+		}
+		return this.lmap.on('click', handler2);
+	}
+
 	addCircle(pos, radius, popup) {
 		let circle =
 			L.circle(pos,
@@ -431,6 +463,10 @@ function checkboxUpdate(checkbox) {
 	else {
 		map.vgs.hideOrder(checkbox.id[5]);
 	}
+}
+
+function showAltitudeButton() {
+	map.vgs.showAltitudes();
 }
 
 function onLoad()
