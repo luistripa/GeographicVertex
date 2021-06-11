@@ -311,7 +311,7 @@ class VGCollection {
 
 	showVGSSameOrder(order) {
 		for (let i=0; i<this.vgs[order].length; i++) {
-			let circle = this.map.addCircle([this.vgs[order][i].latitude, this.vgs[order][i].longitude], 200);
+			let circle = this.map.addCircle([this.vgs[order][i].latitude, this.vgs[order][i].longitude], 300);
 			circle.addTo(this.map.lmap);
 			this.circleArray.push(circle);
 		}
@@ -319,7 +319,7 @@ class VGCollection {
 
 	verifyVGS() {
 		let invalid = []
-		let isInvalid = false;
+		let isInvalid = true;
 		for (let i=1; i<=this.vgs.length; i++) {
 			if (this.vgs[i] == undefined)
 				continue;
@@ -328,22 +328,17 @@ class VGCollection {
 
 				for (let k=j+1; k<this.vgs[i].length; k++) {
 					let vgk = this.vgs[i][k];
-					if (!vgj.verify(vgk)) {
-						invalid.push(vgk.name);
-						isInvalid = true;
-						let circle = this.map.addCircle([this.vgs[i][k].latitude, this.vgs[i][k].longitude], 200);
-						circle.addTo(this.map.lmap);
-						this.circleArray.push(circle);
+					if (vgj.verify(vgk)) {
+						isInvalid = false;
+						break;
 					}
 				}
+
 				if (isInvalid)
 					invalid.push(vgj.name);
 			}
 		}
-		alert(invalid);
-
-		//|1|2|3|2|5|7|1|5|2|
-
+		alert("Invalidos: "+invalid);
 
 	}
 
@@ -533,11 +528,13 @@ function checkboxUpdate(checkbox) {
 }
 
 function showAltitudeButton() {
+	map.vgs.removeCircles();
 	map.vgs.showAltitudes();
 }
 
 /* Shows all the VGs of the same order*/
 function vgSameOrder(order) {
+	map.vgs.removeCircles();
 	map.vgs.showVGSSameOrder(order);
 }
 
@@ -546,7 +543,6 @@ function verifyVGSButton() {
 }
 
 function openGoogleStreetView(lat, lng) {
-	alert(lat+lng)
 	document.location = "http://maps.google.com/maps?q=&layer=c&cbll="+lat+","+lng;
 }
 

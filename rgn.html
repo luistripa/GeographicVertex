@@ -45,9 +45,9 @@ Rede Geodésica Nacional
         .controlBarSmall {
             position: absolute;
             display: none;
-            width: 24vw;
+            width: 280px;
             height: 60px;
-            margin: 2vh 3vw 2vh 3vw;
+            margin: 30px 30px 30px 30px;
             z-index: 1;
             text-align: center;
             align-items: center;
@@ -60,19 +60,22 @@ Rede Geodésica Nacional
             box-shadow: 0 0 10px 5px darksalmon;
         }
 
+        .controlBarSmall p {
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            text-decoration: underline;
+        }
+
         .controlBarSmall p:hover {
             background-color: lightgrey;
         }
 
-        .controlBarSmall p {
-            cursor: pointer;
-        }
-
         .controlBar { /* The control bar div (box on the left)) */
             position: absolute;
-            height: 96vh;
-            width: 24vw;
-            margin: 2vh 3vw 2vh 3vw;
+            height: calc(100% - 60px);
+            width: 280px;
+            margin: 30px 30px 30px 30px;
             z-index: 1;
 
             background-color: darksalmon;
@@ -89,7 +92,7 @@ Rede Geodésica Nacional
             width: 96%;
             text-align: center;
             color: white;
-            font-size: 2.1vw;
+            font-size: 22px;
             margin-top: 1vh;
             margin-left: 2%;
             margin-right: 2%;
@@ -102,7 +105,7 @@ Rede Geodésica Nacional
         .subtitle { /* The subtitle of each section inside the controlBar */
             margin: 1vh 0 1vh 0;
             text-align: center;
-            font-size: 2vw;
+            font-size: 22px;
             color: white;
         }
 
@@ -116,7 +119,7 @@ Rede Geodésica Nacional
             margin-bottom: 0px;
             width: 100%;
             text-align: center;
-            font-size: 1.6vw;
+            font-size: 16px;
             color: white;
         }
 
@@ -144,18 +147,20 @@ Rede Geodésica Nacional
             height: 40px;
             margin: 2% 2%;
             float: left;
+            font-size: 16px;
         }
 
         .section .statistic { /* A statistic show in the 'Estatísticas' section */
             text-align: center;
-            font-size: 1.4vw;
+            font-size: 16px;
         }
 
         .hideButton {
             width: 100%;
             text-align: center;
             cursor: pointer;
-            font-size: 1.2vw;
+            font-size: 16px;
+            text-decoration: underline;
         }
 
         .hideButton:hover {
@@ -176,7 +181,7 @@ Rede Geodésica Nacional
 <BODY ONLOAD="onLoad()">
 
     <div id="controlBarSmall" class="controlBarSmall" onclick="showControlBar();">
-        <p style="font-size: 1.2vw; text-decoration: underline;">Show Control Bar</p>
+        <p>Show Control Bar</p>
     </div>
 
     <div id="controlBar" class="controlBar">
