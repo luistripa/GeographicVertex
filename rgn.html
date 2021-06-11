@@ -42,6 +42,32 @@ Rede Geodésica Nacional
             width: 100%;
         }
 
+        .controlBarSmall {
+            position: absolute;
+            display: none;
+            width: 24vw;
+            height: 60px;
+            margin: 2vh 3vw 2vh 3vw;
+            z-index: 1;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+            background-color: darksalmon;
+            border-radius: 20px;
+            border-color: white;
+            border-color: darksalmon;
+            box-shadow: 0 0 10px 5px darksalmon;
+        }
+
+        .controlBarSmall p:hover {
+            background-color: lightgrey;
+        }
+
+        .controlBarSmall p {
+            cursor: pointer;
+        }
+
         .controlBar { /* The control bar div (box on the left)) */
             position: absolute;
             height: 96vh;
@@ -49,12 +75,11 @@ Rede Geodésica Nacional
             margin: 2vh 3vw 2vh 3vw;
             z-index: 1;
 
-            background-color: dodgerblue;
+            background-color: darksalmon;
             border-radius: 20px;
             border-color: white;
-            border-style: ;
-            border-color: dodgerblue;
-            box-shadow: 0 0 10px 5px dodgerblue; /* Shadow arround controlBar */
+            border-color: darksalmon;
+            box-shadow: 0 0 10px 5px darksalmon; /* Shadow arround controlBar */
 
             overflow-y: scroll;
             scrollbar-width: none; /* hide scroll bar (Firefox only) */
@@ -126,6 +151,17 @@ Rede Geodésica Nacional
             font-size: 1.4vw;
         }
 
+        .hideButton {
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            font-size: 1.2vw;
+        }
+
+        .hideButton:hover {
+            background-color: lightgrey;
+        }
+
         .map { /* The map */
             position: absolute;
             top: 0px;
@@ -139,8 +175,16 @@ Rede Geodésica Nacional
 
 <BODY ONLOAD="onLoad()">
 
-    <div class="controlBar">
+    <div id="controlBarSmall" class="controlBarSmall" onclick="showControlBar();">
+        <p style="font-size: 1.2vw; text-decoration: underline;">Show Control Bar</p>
+    </div>
+
+    <div id="controlBar" class="controlBar">
         <h2 class="mainTitle">Rede Geodésica Nacional</h2>
+
+        <div class="hideButton">
+            <p onclick="hideControlBar();">Hide Control Bar</p>
+        </div>
 
         <hr>
         <div class="section">
@@ -171,7 +215,7 @@ Rede Geodésica Nacional
                 </div>
             </div>
             <div class="controlButtons">
-                <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
+                <INPUT TYPE="button" ID="hello" VALUE="Altitudes" ONCLICK="alert('Olá olá!')">
                 <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
                 <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
                 <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
@@ -187,8 +231,10 @@ Rede Geodésica Nacional
             <p class="statistic">VGs ordem 2: <SPAN id='visible_caches_order2'>0</SPAN></p>
             <p class="statistic">VGs ordem 3: <SPAN id='visible_caches_order3'>0</SPAN></p>
             <p class="statistic">VGs ordem 4: <SPAN id='visible_caches_order4'>0</SPAN></p>
+            <p class="statistic">VG mais alto: <SPAN id='higher_vg_name'>NaN</SPAN> (<SPAN id='higher_vg_altitude'>0</SPAN>m)</p>
+            <p class="statistic">VG mais baixo: <SPAN id='lower_vg_name'>NaN</SPAN> (<SPAN id='lower_vg_altitude'>0</SPAN>m)</p>
         </div>
-        <button title="Teste" onclick="help()">Debug1</button>
+        <button title="Teste" onclick="help();">Debug1</button>
         <button title="Teste" onclick="help2()">Debug2</button>
 
         <hr>

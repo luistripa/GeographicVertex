@@ -102,22 +102,45 @@ function getFirstValueByTagName(xml, name)  {
 /* POI */
 
 class POI {
-	constructor(xml) {
+	constructor(xml, map) {
 		this.name = getFirstValueByTagName(xml, "name");
 		this.latitude = getFirstValueByTagName(xml, "latitude");
 		this.longitude = getFirstValueByTagName(xml, "longitude");
+
+		this.map = map;
+		this.marker = L.circle([this.latitude, this.longitude],
+			50,
+			{color: 'red', fillColor: 'pink', fillOpacity: 0.4}
+		).bindTooltip("This is the POI <b>"+this.name+"</b>");
+
+		this.shown = false;
+	}
+
+	/* Mostra o POI no mapa */
+	show() {
+		if (!this.map.lmap.hasLayer(this.marker)) {
+			this.marker.addTo(this.map.lmap);
+			this.shown = true;
+		}
+
+	}
+
+	/* Esconde o POI */
+	hide() {
+		this.map.lmap.removeLayer(this.marker);
+		this.shown = false;
 	}
 }
 
 class VG extends POI {
-	constructor(xml, map, icons) {
-		super(xml);
+	constructor(xml, map) {
+		super(xml, map);
 		this.order = getFirstValueByTagName(xml, "order");
 		this.altitude = getFirstValueByTagName(xml, "altitude");
 		this.type = getFirstValueByTagName(xml, "type");
 
 		this.map = map;
-		this.marker = L.marker([this.latitude, this.longitude], {icon: icons['order'+this.order]});
+		this.marker = L.marker([this.latitude, this.longitude], {icon: map.icons['order'+this.order]});
 		this.marker.bindPopup("I'm the marker of VG <b>" + this.name + "</b>.<br>"+
 							"Lat: "+this.latitude+"<br>"+
 							"Lng: "+this.longitude+"<br>"+
@@ -126,38 +149,29 @@ class VG extends POI {
 							"Type: "+this.type)
 				.bindTooltip(this.name)
 	}
-
-	show() {
-		if (!this.map.hasLayer(this.marker))
-			this.marker.addTo(this.map);
-	}
-
-	hide() {
-		this.map.removeLayer(this.marker);
-	}
 }
 
 class VG1 extends VG {
-	constructor(xml, map, icons) {
-		super(xml, map, icons);
+	constructor(xml, map) {
+		super(xml, map);
 	}
 }
 
 class VG2 extends VG {
-	constructor(xml, map, icons) {
-		super(xml, map, icons);
+	constructor(xml, map) {
+		super(xml, map);
 	}
 }
 
 class VG3 extends VG {
-	constructor(xml, map, icons) {
-		super(xml, map, icons);
+	constructor(xml, map) {
+		super(xml, map);
 	}
 }
 
 class VG4 extends VG {
-	constructor(xml, map, icons) {
-		super(xml, map, icons);
+	constructor(xml, map) {
+		super(xml, map);
 	}
 }
 
@@ -165,18 +179,26 @@ class VGCollection {
 	constructor() {
 		this.vgs = []; // Lista de listas de VGs
 		this.vgs_count = [];
-		this.shown_vgs = 0
+		this.shown_vgs = 0;
+		this.lower_vg = null;
 	}
 
 	addVG(vg) {
+		if (!(vg instanceof VG)) {
+			vg.show();
+			return;
+		}
+
 		if (this.vgs[vg.order] == undefined)
 			this.vgs[vg.order] = [];
-		this.vgs[vg.order].push(vg)
+		this.vgs[vg.order].push(vg);
 	}
 
+	/* Mostra VGs de uma determinada ordem */
 	showOrder(order) {
 		for(let i = 0; i < this.vgs[order].length; i++) {
 			this.vgs[order][i].show();
+
 			this.shown_vgs++;
 			if (this.vgs_count[order] == undefined)
 				this.vgs_count[order] = 0;
@@ -185,6 +207,7 @@ class VGCollection {
 		this.updateStatistics();
 	}
 
+	/* Esconde VGs de uma determinada ordem */
 	hideOrder(order) {
 		for(let i = 0; i < this.vgs[order].length; i++) {
 			this.vgs[order][i].hide();
@@ -196,14 +219,77 @@ class VGCollection {
 		this.updateStatistics();
 	}
 
+	higherVG() {
+		let auxVG = null;
+		for (let i=0; i<this.vgs.length; i++) {
+			if (this.vgs[i] == undefined)
+				continue;
+			for (let j=0; j<this.vgs[i].length; j++) {
+				if (auxVG == null && this.vgs[i][j].shown)
+					auxVG = this.vgs[i][j];
+				else {
+					if (this.vgs[i][j].altitude != "ND" &&
+						this.vgs[i][j].shown &&
+						parseInt(this.vgs[i][j].altitude) > parseInt(auxVG.altitude)
+					)
+						auxVG = this.vgs[i][j];
+				}
+			}
+		}
+		return auxVG;
+	}
+
+	lowerVG() {
+		let auxVG = null;
+		for (let i=0; i<this.vgs.length; i++) {
+			if (this.vgs[i] == undefined)
+				continue;
+			for (let j=0; j<this.vgs[i].length; j++) {
+				if (auxVG == null && this.vgs[i][j].shown)
+					auxVG = this.vgs[i][j];
+				else {
+					if (this.vgs[i][j].altitude != "ND" &&
+						this.vgs[i][j].shown &&
+						parseInt(this.vgs[i][j].altitude) < parseInt(auxVG.altitude)
+					)
+						auxVG = this.vgs[i][j];
+				}
+			}
+		}
+		return auxVG;
+	}
+
+	/* Faz update das estatísticas da página */
 	updateStatistics() {
 		document.getElementById("visible_caches").innerText = this.shown_vgs;
 
+		// Update das estatísticas dos totais parciais
 		for (let i=1; i<this.vgs_count.length; i++) {
 			if (this.vgs_count[i] == undefined)
 				document.getElementById("visible_caches_order"+i).innerText = 0;
 			else
 				document.getElementById("visible_caches_order"+i).innerText = this.vgs_count[i];
+		}
+
+		let hVG = this.higherVG();
+		let lVG = this.lowerVG();
+
+		// Update higher vg in the statictics section
+		if (hVG == null) {
+			document.getElementById("higher_vg_name").innerText = "NaN";
+			document.getElementById("higher_vg_altitude").innerText = 0;
+		} else {
+			document.getElementById("higher_vg_name").innerText = hVG.name;
+			document.getElementById("higher_vg_altitude").innerText = hVG.altitude;
+		}
+
+		// Update lower vg in the statictics section
+		if (lVG == null) {
+			document.getElementById("lower_vg_name").innerText = "NaN";
+			document.getElementById("lower_vg_altitude").innerText = 0;
+		} else {
+			document.getElementById("lower_vg_name").innerText = lVG.name;
+			document.getElementById("lower_vg_altitude").innerText = lVG.altitude;
 		}
 	}
 }
@@ -288,18 +374,19 @@ class Map {
 
 				switch (order) {
 					case '1':
-						vg = new VG1(xs[i], this.lmap, this.icons);
+						vg = new VG1(xs[i], this);
 						break;
 					case '2':
-				  		vg = new VG2(xs[i], this.lmap, this.icons);
+				  		vg = new VG2(xs[i], this);
 						break;
 					case '3':
-				  		vg = new VG3(xs[i], this.lmap, this.icons);
+				  		vg = new VG3(xs[i], this);
 						break;
 					case '4':
-				  		vg = new VG4(xs[i], this.lmap, this.icons);
+				  		vg = new VG4(xs[i], this);
 						break;
-
+					default:
+						vg = new POI(xs[i], this)
 				}
 				vgs.addVG(vg);
 			}
@@ -352,8 +439,19 @@ function onLoad()
 	map.addCircle(MAP_CENTRE, 100, "FCT/UNL");
 
 	// Update checkbox objects
-	for (let i=1; i<VG_TYPE_COUNT; i++)
+	for (let i=1; i<=VG_TYPE_COUNT; i++)
 		if (document.getElementById("order"+i).checked)
 			map.vgs.showOrder(i);
 
+}
+
+function showControlBar() {
+	document.getElementById('controlBar').style.display = 'block';
+	document.getElementById('controlBarSmall').style.display = 'none';
+
+}
+
+function hideControlBar() {
+	document.getElementById('controlBar').style.display = 'none';
+	document.getElementById('controlBarSmall').style.display = 'flex';
 }
