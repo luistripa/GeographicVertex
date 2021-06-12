@@ -18,6 +18,10 @@ Rede Geodésica Nacional
        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
        crossorigin=""></script>
 
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css">
+    <script src="https://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+
     <SCRIPT TYPE="text/javascript" SRC="rgn.js"></SCRIPT>
     <STYLE>
         html, body {
@@ -125,13 +129,12 @@ Rede Geodésica Nacional
 
         .section .mg_control { /* Checkbox controls for the 'marcos geodésicos' */
             overflow-y: hidden;
-            scrollbar-width: none;
         }
 
         .section .mg_control .control { /* A checkbox control */
             display: flex;
             width: 50%;
-            height: 2vh;
+            height: 20px;
             float: left;
             justify-content: center;
             align-items: center;
@@ -143,16 +146,15 @@ Rede Geodésica Nacional
         }
 
         .controlButtons input { /* Buttons from the 'Controlos' section */
-            width: 46%;
+            width: 96%;
             height: 40px;
             margin: 2% 2%;
-            float: left;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .section .statistic { /* A statistic show in the 'Estatísticas' section */
             text-align: center;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .hideButton {
@@ -165,6 +167,29 @@ Rede Geodésica Nacional
 
         .hideButton:hover {
             background-color: lightgrey;
+        }
+
+        .scrollArrowContainer {
+            display: flex;
+            position: absolute;
+            z-index: 2;
+            justify-content: center;
+            align-items: center;
+            top: calc(100% - 100px);
+            margin: 30px 30px 30px 30px;
+            width: 280px;
+
+        }
+
+        .scrollArrowContainer .scrollArrow {
+            width: 5px;
+            height: 5px;
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            opacity: 70%;
         }
 
         .map { /* The map */
@@ -194,8 +219,8 @@ Rede Geodésica Nacional
         <hr>
         <div class="section">
             <p class="subtitle"><b>Autores:</b></p>
-            <p class="name">12345 Duuude</p>
-            <p class="name">67890 Duuudess</p>
+            <p class="name">57706 Raquel Melo</p>
+            <p class="name">57882 Luis Tripa</p>
         </div>
 
         <hr>
@@ -220,10 +245,8 @@ Rede Geodésica Nacional
                 </div>
             </div>
             <div class="controlButtons">
-                <INPUT TYPE="button" ID="hello" VALUE="Altitudes" ONCLICK="showAltitudeButton()">
-                <INPUT TYPE="button" ID="hello" VALUE="Verificar" ONCLICK="verifyVGSButton()">
-                <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
-                <INPUT TYPE="button" ID="hello" VALUE="Olá olá!" ONCLICK="alert('Olá olá!')">
+                <INPUT TYPE="button" ID="altitudes" VALUE="Altitudes dos VGs" ONCLICK="showAltitudeButton()">
+                <INPUT TYPE="button" ID="verificar" VALUE="Verificar Distâncias" ONCLICK="verifyVGSButton()">
             </div>
         </div>
 
@@ -238,12 +261,15 @@ Rede Geodésica Nacional
             <p class="statistic">VGs ordem 4: <SPAN id='visible_caches_order4'>0</SPAN></p>
             <p class="statistic">VG mais alto: <SPAN id='higher_vg_name'>NaN</SPAN> (<SPAN id='higher_vg_altitude'>0</SPAN>m)</p>
             <p class="statistic">VG mais baixo: <SPAN id='lower_vg_name'>NaN</SPAN> (<SPAN id='lower_vg_altitude'>0</SPAN>m)</p>
+            <p class="statistic">Média Altitude: <SPAN id='average_altitude'>NaN</SPAN>m</p>
         </div>
-        <button title="Teste" onclick="help();">Debug1</button>
-        <button title="Teste" onclick="help2()">Debug2</button>
 
         <hr>
     </DIV>
+
+    <div class="scrollArrowContainer">
+        <div id='#scrollArrow' class="scrollArrow"></div>
+    </div>
 
     <div id="mapid" class="map"></div>
 
