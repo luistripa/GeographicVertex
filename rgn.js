@@ -81,11 +81,9 @@ function loadXMLDoc(filename)
 	let xhttp = new XMLHttpRequest();
 	xhttp.open("GET", filename, false);
 	try {
-		xhttp.open("GET",
-			"http://ctp.di.fct.unl.pt/miei/lap/projs/proj2021-3/resources/rgn.xml",
-			false);
 		xhttp.send();
-	} catch (err) {
+	}
+	catch(err) {
 		alert("Could not access the local geocaching database via AJAX.\n"
 			+ "Therefore, no POIs will be visible.\n");
 	}
@@ -504,8 +502,8 @@ class VGCollection {
 
 		for (let i=0; i<vgs_aux.length; i++) {
 			let vgi = vgs_aux[i];
-			let circle = this.map.drawCircle([vgi.latitude, vgi.longitude], 200);
-			this.circleArray.push(circle);
+			let circle = this.map.createCircle([vgi.latitude, vgi.longitude], 200);
+			circle.addTo(this.circle_cluster);
 		}
 	}
 
