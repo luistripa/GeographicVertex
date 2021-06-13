@@ -255,7 +255,14 @@ class VGCollection {
 		this.map = map;
 		this.vgs = []; // Lista de listas de VGs (ordenados por ordem; cada ordem em uma lista)
 		this.vgs_count = []; // Armazena os totais parciais de cada ordem de VGs
-		this.circleArray = [];
+
+		this.circle_cluster = L.markerClusterGroup({
+			removeOutsideVisibleBounds: true,
+			iconCreateFunction: function (cluster) {
+				return L.divIcon({ html: "", className: 'mycluster', iconSize: L.point(40, 40) });
+			},
+		});
+		this.map.lmap.addLayer(this.circle_cluster);
 	}
 
 	/*
@@ -390,8 +397,16 @@ class VGCollection {
 						parseFloat(vgi.altitude*3),
 					);
 					circle.setStyle({color: "blue", fillColor: "pink"});
-					circle.addTo(this.map.lmap);
-					this.circleArray.push(circle);
+					circle.addTo(this.circle_cluster);
+
+				} else { // Adiciona um circulo "invisível" para os circulos se poderem juntar
+						// adequadamente nos clusters
+					let circle = this.map.createCircle(
+						[vgi.latitude, vgi.longitude],
+						0,
+					);
+					circle.setStyle({color: "blue", fillColor: "pink"});
+					circle.addTo(this.circle_cluster);
 				}
 			}
 		}
@@ -406,9 +421,7 @@ class VGCollection {
 		- Se carrega no mapa fora de uma VG ou circulo
 	*/
 	removeCircles() {
-		for(let i = 0; i < this.circleArray.length; i++) {
-			this.map.lmap.removeLayer(this.circleArray[i]);
-	   }
+		this.circle_cluster.clearLayers();
 	}
 
 	/*
@@ -422,8 +435,7 @@ class VGCollection {
 				if (vgi.type == type) {
 					let circle = this.map.createCircle([vgi.latitude, vgi.longitude], 300);
 					circle.setStyle({color: "green", fillColor: "pink"});
-					circle.addTo(this.map.lmap);
-					this.circleArray.push(circle);
+					circle.addTo(this.circle_cluster);
 				}
 			}
 		}
@@ -506,14 +518,14 @@ class VGCollection {
 			if (this.vgs_count != undefined)
 				totalShownVGS += this.vgs_count[i];
 		}
-		document.getElementById("visible_caches").innerText = totalShownVGS;
+		document.getElementById("visible_caches").innerHTML = totalShownVGS;
 
 		// Update das estatísticas dos totais parciais
 		for (let i=1; i<this.vgs_count.length; i++) {
 			if (this.vgs_count[i] == undefined)
-				document.getElementById("visible_caches_order"+i).innerText = 0;
+				document.getElementById("visible_caches_order"+i).innerHTML = 0;
 			else
-				document.getElementById("visible_caches_order"+i).innerText = this.vgs_count[i];
+				document.getElementById("visible_caches_order"+i).innerHTML = this.vgs_count[i];
 		}
 
 		let hVG = this.higherVG();
@@ -521,20 +533,20 @@ class VGCollection {
 
 		// Atualiza o VG mais alto
 		if (hVG == null) {
-			document.getElementById("higher_vg_name").innerText = "NaN";
-			document.getElementById("higher_vg_altitude").innerText = 0;
+			document.getElementById("higher_vg_name").innerHTML = "NaN";
+			document.getElementById("higher_vg_altitude").innerHTML = 0;
 		} else {
-			document.getElementById("higher_vg_name").innerText = hVG.name;
-			document.getElementById("higher_vg_altitude").innerText = hVG.altitude;
+			document.getElementById("higher_vg_name").innerHTML = hVG.name;
+			document.getElementById("higher_vg_altitude").innerHTML = hVG.altitude;
 		}
 
 		// Atualiza o VG mais baixo
 		if (lVG == null) {
-			document.getElementById("lower_vg_name").innerText = "NaN";
-			document.getElementById("lower_vg_altitude").innerText = 0;
+			document.getElementById("lower_vg_name").innerHTML = "NaN";
+			document.getElementById("lower_vg_altitude").innerHTML = 0;
 		} else {
-			document.getElementById("lower_vg_name").innerText = lVG.name;
-			document.getElementById("lower_vg_altitude").innerText = lVG.altitude;
+			document.getElementById("lower_vg_name").innerHTML = lVG.name;
+			document.getElementById("lower_vg_altitude").innerHTML = lVG.altitude;
 		}
 
 		// Atualiza a média
